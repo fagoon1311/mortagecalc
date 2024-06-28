@@ -9,6 +9,16 @@ const Calculator = () => {
     const [monthlyPayment, setMonthlyPayment] = useState('');
     const [totalInterestPaid, setTotalInterestPaid] = useState('');
 
+    const onReset = (e) => {
+        e.preventDefault();
+        setLoanAmount('')
+        setTerm('')
+        setInterest('')
+        setTotalAmount('')
+        setMonthlyPayment('')
+        setTotalInterestPaid('')
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -80,7 +90,7 @@ const Calculator = () => {
             <div>
                 <span>
                     <button className='rounded-3xl bg-slate-200 px-3 py-1 w-[8rem] m-2' onClick={onSubmit}>Calculate</button>
-                    <button className='rounded-3xl bg-slate-200 px-3 py-1 m-2 w-[8rem]'>Reset</button>
+                    <button className='rounded-3xl bg-slate-200 px-3 py-1 m-2 w-[8rem]' onClick={onReset}>Reset</button>
                 </span>
             </div>
         </div>
