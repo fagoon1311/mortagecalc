@@ -44,13 +44,13 @@ const Calculator = () => {
     };
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col bg-slate-100 p-2 rounded-md'>
             <div>
                 <form onSubmit={onSubmit}>
                     <div className='flex flex-row'>
                         <label className='m-2 p-2 w-[10rem]'>Loan Amount</label>
                         <input
-                            className='border border-blue-100 m-2 p-2'
+                            className='border border-blue-100 my-2 p-2'
                             type='number'
                             value={loanAmount}
                             onChange={(e) => setLoanAmount(e.target.value)}
@@ -59,7 +59,7 @@ const Calculator = () => {
                     <div className='flex flex-row'>
                         <label className='m-2 p-2 w-[10rem]'>Loan Term</label>
                         <input
-                            className='border border-blue-100 m-2 p-2'
+                            className='border border-blue-100 my-2 p-2'
                             type='number'
                             value={term}
                             onChange={(e) => setTerm(e.target.value)}
@@ -68,7 +68,7 @@ const Calculator = () => {
                     <div className='flex flex-row'>
                         <label className='m-2 p-2 w-[10rem]'>Interest rate (%)</label>
                         <input
-                            className='border border-blue-100 m-2 p-2'
+                            className='border border-blue-100 my-2 p-2'
                             type='number'
                             value={interest}
                             onChange={(e) => setInterest(e.target.value)}
@@ -78,7 +78,7 @@ const Calculator = () => {
             </div>
             <div>
                 <span className='flex ml-2 p-2'>
-                    Monthly payment amount: <h1 className='ml-2'>{monthlyPayment ? monthlyPayment : 0}</h1>
+                    Monthly payment amount : <h1 className='ml-2'>{monthlyPayment ? monthlyPayment : 0}</h1>
                 </span>
                 <span className='flex ml-2 p-2'>
                     Total payment amount: <h1 className='ml-2'>{totalAmount ? totalAmount : 0}</h1>
@@ -87,10 +87,10 @@ const Calculator = () => {
                     Interest paid: <h1 className='ml-2'>{totalInterestPaid ? totalInterestPaid : 0}</h1>
                 </span>
             </div>
-            <div>
+            <div className='flex flex-row items-center justify-center'>
                 <span>
-                    <button className='rounded-3xl bg-slate-200 px-3 py-1 w-[8rem] m-2' onClick={onSubmit}>Calculate</button>
-                    <button className='rounded-3xl bg-slate-200 px-3 py-1 m-2 w-[8rem]' onClick={onReset}>Reset</button>
+                    <button className='rounded-3xl bg-slate-200 px-3 py-1 w-[8rem] m-2 hover:border border-black' onClick={onSubmit}>Calculate</button>
+                    <button className='rounded-3xl bg-slate-200 px-3 py-1 m-2 w-[8rem] hover:border border-black' onClick={onReset}>Reset</button>
                 </span>
             </div>
         </div>
